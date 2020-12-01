@@ -13,5 +13,5 @@ inputs:
 
       Thanks!
 runs:
-  using: "node14"
-  main: "index.js"
+  using: "docker"
+  image: "Dockerfile"
