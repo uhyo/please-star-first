@@ -1,0 +1,14 @@
+on:
+  issues:
+    types: [opened, reopened]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    name: Close issue opened by non-stargazer
+    steps:
+      - name: close
+        id: close
+        uses: uhyo/please-star-first@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
