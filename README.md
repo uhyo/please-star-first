@@ -4,6 +4,6 @@ This GitHub Action automatically closes issues opened by non-stargazers.
 
 **Feel free to try out in this repository!**
 
-## Setting up
+## Usage
 
 See `.github/workflows/issue.yml`.

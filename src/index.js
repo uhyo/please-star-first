@@ -6,11 +6,13 @@ try {
 
   const octokit = github.getOctokit(token);
 
-  console.log(`The event payload: ${JSON.stringify(github.context.payload, undefined, 2)}`);
+  // console.log(`The event payload: ${JSON.stringify(github.context.payload, undefined, 2)}`);
 
   switch (github.context.eventName) {
     case "issues": {
-      await handleIssues(octokit, github.context.payload);
+      handleIssues(octokit, github.context.payload).catch(error => {
+        core.setFailed(error.message);
+      })
     }
   }
 } catch (error) {
@@ -60,6 +62,7 @@ async function isStarredBy(octokit, user) {
       page,
       per_page: 100
     });
+    console.log(resp);
     if (resp.data.some(u => u.log === user)) {
       return true;
     }
