@@ -1,6 +1,9 @@
 name: "Please Star First"
 author: "uhyo"
 description: "Automatically closes issues opened by non-stargazers"
+branding:
+  icon: star
+  color: yellow
 inputs:
   token:
     description: "GitHub token for use by this action."
