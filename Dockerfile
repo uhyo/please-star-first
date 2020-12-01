@@ -1,6 +1,7 @@
 FROM node:14
 
-COPY /src /package.json /package-lock.json /
+COPY /package.json /package-lock.json /
 RUN npm install --production
+COPY /src /
 
-ENTRYPOINT ["node", "src/index.js"]
+ENTRYPOINT ["node", "/src/index.js"]
