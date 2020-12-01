@@ -1,0 +1,17 @@
+name: "Please Star First"
+author: "uhyo"
+description: "Automatically closes issues opened by non-stargazers"
+inputs:
+  token:
+    description: "GitHub token for use by this action."
+    required: true
+  message:
+    description: "Message"
+    required: false
+    default: |
+      Please star this repository before opening an issue.
+
+      Thanks!
+runs:
+  using: "node14"
+  main: "index.js"
