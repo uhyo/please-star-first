@@ -10,8 +10,7 @@ try {
 
   switch (github.context.eventName) {
     case "issues": {
-      /** @type {import("@octokit/webhooks").WebhookEvent} */
-      await handleIssues(octokit, github.context.payload.payload);
+      await handleIssues(octokit, github.context.payload);
     }
   }
 } catch (error) {
