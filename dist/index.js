@@ -5835,8 +5835,7 @@ async function isStarredBy(octokit, user) {
       page,
       per_page: 100
     });
-    console.log(resp);
-    if (resp.data.some(u => u.log === user)) {
+    if (resp.data.some(u => u.login === user)) {
       return true;
     }
     if (resp.data.length < 100) {
