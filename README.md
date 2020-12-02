@@ -6,4 +6,16 @@ This GitHub Action automatically closes issues opened by non-stargazers.
 
 ## Usage
 
-See `.github/workflows/issue.yml`.
+```yml
+on:
+  issues:
+    types: [opened, reopened]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    name: Close issue opened by non-stargazer
+    steps:
+      - name: close
+        uses: uhyo/please-star-first@v1
+```
