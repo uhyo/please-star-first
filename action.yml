@@ -7,7 +7,8 @@ branding:
 inputs:
   token:
     description: "GitHub token for use by this action."
-    required: true
+    required: false
+    default: ${{ github.token }}
   message:
     description: "Message"
     required: false
