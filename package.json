@@ -20,12 +20,12 @@
   },
   "homepage": "https://github.com/uhyo/please-star-first#readme",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^4.0.0",
-    "@octokit/webhooks": "^7.15.1"
+    "@actions/core": "^1.6.0",
+    "@actions/github": "^5.0.0",
+    "@octokit/webhooks": "^9.22.0"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.25.1",
-    "prettier": "^2.2.1"
+    "@vercel/ncc": "^0.33.3",
+    "prettier": "^2.5.1"
   }
 }
