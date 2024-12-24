@@ -1,3 +1,4 @@
+// @ts-check
 import core from "@actions/core";
 import github from "@actions/github";
 
@@ -22,7 +23,7 @@ try {
 /**
  *
  * @param {ReturnType<typeof github.getOctokit>} octokit
- * @param {import("@octokit/webhooks").EventPayloads.WebhookPayloadIssues} payload
+ * @param {import("@octokit/webhooks").EmitterWebhookEvent<"issues">["payload"]} payload
  */
 async function handleIssues(octokit, payload) {
   if (payload.action !== "opened" && payload.action !== "reopened") {
