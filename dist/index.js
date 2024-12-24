@@ -31708,6 +31708,12 @@ async function handleIssues(octokit, payload) {
   console.log(`${sender.login} has not starred this repository`);
 
   const message = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("message");
+  const close_reason = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("close_reason");
+
+  if (close_reason !== "completed" && close_reason !== "not_planned") {
+    throw new Error(`Invalid close_reason: ${close_reason}`);
+  }
+
   // opened by non-stargazer
   await octokit.request(
     "POST /repos/{owner}/{repo}/issues/{issue_number}/comments",
@@ -31723,6 +31729,7 @@ ${message}`,
     ..._actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo,
     issue_number: payload.issue.number,
     state: "closed",
+    state_reason: close_reason,
   });
 }
 
