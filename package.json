@@ -1,6 +1,6 @@
 {
   "name": "please-star-first",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Please Star First GitHub Action",
   "main": "index.js",
   "type": "module",
