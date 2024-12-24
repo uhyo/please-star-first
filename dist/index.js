@@ -31669,6 +31669,7 @@ module.exports = parseParams
 var __webpack_exports__ = {};
 /* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(7484);
 /* harmony import */ var _actions_github__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(3228);
+// @ts-check
 
 
 
@@ -31693,7 +31694,7 @@ try {
 /**
  *
  * @param {ReturnType<typeof github.getOctokit>} octokit
- * @param {import("@octokit/webhooks").EventPayloads.WebhookPayloadIssues} payload
+ * @param {import("@octokit/webhooks").EmitterWebhookEvent<"issues">["payload"]} payload
  */
 async function handleIssues(octokit, payload) {
   if (payload.action !== "opened" && payload.action !== "reopened") {
