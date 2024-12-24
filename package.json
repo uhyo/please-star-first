@@ -22,7 +22,7 @@
   "dependencies": {
     "@actions/core": "^1.11.1",
     "@actions/github": "^6.0.0",
-    "@octokit/webhooks": "^9.22.0"
+    "@octokit/webhooks": "^13.4.1"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.38.3",
