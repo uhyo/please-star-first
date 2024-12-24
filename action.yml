@@ -9,6 +9,10 @@ inputs:
     description: "GitHub token for use by this action."
     required: false
     default: ${{ github.token }}
+  close_reason:
+    description: "Reason to use when closing the issue. Either 'completed' or 'not_planned'."
+    required: false
+    default: not_planned
   message:
     description: "Message"
     required: false

@@ -37,6 +37,12 @@ async function handleIssues(octokit, payload) {
   console.log(`${sender.login} has not starred this repository`);
 
   const message = core.getInput("message");
+  const close_reason = core.getInput("close_reason");
+
+  if (close_reason !== "completed" && close_reason !== "not_planned") {
+    throw new Error(`Invalid close_reason: ${close_reason}`);
+  }
+
   // opened by non-stargazer
   await octokit.request(
     "POST /repos/{owner}/{repo}/issues/{issue_number}/comments",
@@ -52,6 +58,7 @@ ${message}`,
     ...github.context.repo,
     issue_number: payload.issue.number,
     state: "closed",
+    state_reason: close_reason,
   });
 }
 
