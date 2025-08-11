@@ -8,6 +8,6 @@ jobs:
     name: Close issue opened by non-stargazer
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: close
         uses: ./
