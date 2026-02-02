@@ -21,7 +21,7 @@
   "homepage": "https://github.com/uhyo/please-star-first#readme",
   "dependencies": {
     "@actions/core": "^2.0.2",
-    "@actions/github": "^8.0.0",
+    "@actions/github": "^9.0.0",
     "@octokit/webhooks": "^14.2.0"
   },
   "devDependencies": {
